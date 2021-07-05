@@ -11,10 +11,10 @@
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
 				{{ range $paginator.Pages }}
 					<div class="post">
-						{{ template "partials/post-preview.html" . }}
+						{{ partial "partials/post-preview.html" . }}
 					</div>
 				{{ end }}
-				{{ partial "partials/paginator.html" . }}
+				{{ template "partials/paginator.html" . }}
 			</div>
 		</div>
 	</div>
