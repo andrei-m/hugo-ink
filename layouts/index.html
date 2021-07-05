@@ -10,11 +10,11 @@
 				{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 				{{ $paginator := .Paginate (where $pages "Params.hidden" "ne" true) }}
 				{{ range $paginator.Pages }}
-                    <div class="post">
-                        {{ partial "post-preview.html" . }}
-                    </div>
+					<div class="post">
+						{{ template "partials/post-preview.html" . }}
+					</div>
 				{{ end }}
-				{{ template "partials/paginator.html" . }}
+				{{ partial "partials/paginator.html" . }}
 			</div>
 		</div>
 	</div>
